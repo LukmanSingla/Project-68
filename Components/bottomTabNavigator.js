@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import SearchScreen from "../Screens/Search";
-import TransactionScreen from "../Screens/Transaction";
+import fbScreen from "../Screens/fb";
+import instaScreen from "../Screens/Insta";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
@@ -10,9 +10,19 @@ export default class BottomTabNavigator extends React.Component {
   render() {
     return (
       <NavigationContainer>
+        <View
+          style={{
+            backgroundColor: "red",
+            height: 50,
+            textAlign: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text style={{ color: "white", fontSize: 20 }}>Buzz-App</Text>
+        </View>
         <Tab.Navigator>
-          <Tab.Screen name="Search" component={SearchScreen} />
-          <Tab.Screen name="Transaction" component={TransactionScreen} />
+          <Tab.Screen name="Facebook" component={fbScreen} />
+          <Tab.Screen name="Instagram" component={instaScreen} />
         </Tab.Navigator>
       </NavigationContainer>
     );
